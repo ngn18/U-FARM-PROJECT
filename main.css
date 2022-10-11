@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+.nav-link {
+    margin-right: 40px;
+}
+
+.container-fluid ul li a {
+    color: #a9a7a7;
+}
+
+body {
+    background-image: url(/Images/ufarm.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-fluid {
+    margin-top: 20px; 
+    margin-left: 750px;
+    width: 500px;
+}
+
+.caption {
+    font-size: 80px;
+    margin-top: 150px;
+    margin-left: 200px;
+    color: #272323;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 30px;
+    border-color: #656363;
+}
+
