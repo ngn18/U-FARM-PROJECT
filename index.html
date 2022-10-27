@@ -1,64 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/public/css/bootstrapcss/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/main.css">
     <title>Ufarm</title>
 </head>
-<body style="background-image: url(/Images/UFARM_\ landing_page.png);">
+
+<body style="background-image: url(/public/Images/UFARM_\ landing_page.png);">
     <nav class="navbar navbar-expand-lg">
-     <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px;">
-     <a class="navbar-brand" href="#"><img src="/Images/U+FARM+Logo.png" width="160px"></a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
-     <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
-     <li class="nav-item">
-     <a class="nav-link active" aria-current="page" href="#">Home</a> 
-     </li> 
-     <li class="nav-item"> 
-     <a class="nav-link" href="#">Products</a> 
-     </li>
-     <li class="nav-item"> 
-     <a class="nav-link" href="#">Services</a> 
-     </li> 
-     <li class="nav-item"> 
-        <a class="nav-link" href="#">Blog</a> 
-        </li>
-     <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-     Account
-     </a>
-     <ul class="dropdown-menu">
-     <li><a class="dropdown-item" href="login.html">Login</a></li>
-     <li><a class="dropdown-item" href="register.html">Sign up</a></li>
-     </ul> </li> <li class="nav-item">
-     <a class="nav-link" href="#">Contact</a> 
-     </li> </ul> 
-     </div>
-     </div>
-     </nav>
+        <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px;">
+            <a class="navbar-brand" href="#"><img src="/public/Images/U+FARM+Logo.png" width="160px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="reglanding.html">Sign up</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-     <div  class="caption">
-     <p class="col-8">Welcome to <strong style="color: green;">Masajja Division</strong> Urban farming Initiative.</p>
-     </div>
+    <div class="caption">
+        <p class="col-8">Welcome to <strong style="color: green;">Masajja Division</strong> Urban farming Initiative.
+        </p>
+    </div>
 
-     <div style="margin-top: 100px; margin-left: 200px;">
-     <button type="button" class="btn-primary">Get Started</button>
-     </div>
+    <div style="display: flex;">
+        <div class="" style="margin-top: 100px; margin-left: 200px;">
+            <a href="reglanding.html">
+                <button type="button" class="btn-primary cardbtn2">Get Started</button>
+            </a>
+        </div>
 
-     <div class="button2" style="margin-left: 200px; margin-top: 10px; font-size: 25px; color: black;">
-        <p>Already have an account with us? <a href="#" style="text-decoration: none;">Log in</a></p>
-     </div>
+        <div style="margin-top: 100px; margin-left: 200px;">
+            <a href="products.html">
+                <button type="button" class="btn-primary cardbtn2">View Products</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="button2" style="margin-left: 200px; margin-top: 10px; font-size: 25px; color: black;">
+        <p>Already registered with us? <a href="/login.html" style="text-decoration: none;">Log in</a></p>
+    </div>
 
 
-      
-        
-    
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
 </body>
+
+<script src="/public/js/bootstrapjs/bootstrap.bundle.js"></script>
+<script src="/public/js/validation.js"></script>
+
 </html>

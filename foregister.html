@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/public/css/bootstrapcss/bootstrap.css" />
+  <link rel="stylesheet" href="/public/css/main.css" />
+  <title>Ufarm</title>
+</head>
+
+<body style="background-image: url(/public/Images/UFARM_login_page.png); background-size: cover;">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px;">
+      <a class="navbar-brand" href="/index.html"><img src="/public/Images/U+FARM+Logo.png" width="160px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="login.html">Login</a></li>
+              <li><a class="dropdown-item" href="reglanding.html">Sign up</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col-6" style="margin-left: 100px; margin-top: 10px;">
+    <div class="register">
+      <div class="card-header" style="font-size: 25px; text-align: center;">
+        Welcome to <img src="/public/Images/U+FARM+Logo.png" width="100px" style="margin-top: -12px;">
+      </div>
+      <br>
+      <p style="font-size: 20px;">Register as a Farmer One today</p>
+          <div class="card-body" style="margin-top: 25px; font-size: 20px;">
+            <form id="register" class="form" method="post" name="registration" action="/register">
+
+              <div class="row">
+              <div class="mb-3 col-sm-6">
+                <label for="uniquenumber" class="form-label">Unique Number</label>
+                <input type="uniquenumber" class="form-control" id="uniquenumber" name="uniquenumber"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="ward" class="form-label">Ward</label>
+                <input type="text" class="form-control" id="ward" name="ward"/>
+              </div>
+              
+              <div class="mb-3 col-sm-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="dob" class="form-label">Date of birth</label>
+                <input type="text" class="form-control" id="dateofbirth" name="dateofbirth"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="gender form-label">Gender:</label>
+                <div class="radio">
+                <input type="radio" name="gender" id="gender1" autocomplete="off"  value="male" checked/> <span>Male</span>
+                <input type="radio" name="gender" id="gender2" autocomplete="off" value="female"/> <span>Female</span>
+            </div>
+            </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="nin" class="form-label">NIN</label>
+                <input type="text" class="form-control" id="nin" name="nin"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="telephone" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="telephone" name="telephone"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="activity" class="form-label">Activity</label>
+                <input type="text" class="form-control" id="activity" name="activity"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="regdate" class="form-label">Date of Registration</label>
+                <input type="text" class="form-control" id="regdate" name="regdate"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="directions" class="form-label">Directions</label>
+                <input type="text" class="form-control" id="directions" name="directions"/>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="residence">Residence Type</label>
+                <select name="residence" id="residence" class="drop">
+                  <option value="temporary">Temporary</option>
+                  <option value="permanent">Permanent</option>
+                </select>
+              </div>
+
+              <div class="mb-3 col-sm-6">
+                <label for="years" class="form-label">Years of Residence in Ward</label>
+                <input type="text" class="form-control" id="years" name="years"/>
+              </div>
+              
+              <div class="mb-3 col-sm-6">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password1" name="password1"/>
+              </div>
+            
+
+              <div class="mb-3 col-sm-6">
+                <label for="password2" class="form-label">Password (Again)</label>
+                <input type="password" class="form-control" id="password2" name="password2"/>
+              </div>
+            </div>
+
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="checkEmail(); checkWard(); checkFirstName(); checkLastName(); checkDateOfBirth(); checkNin(); checkPhoneNumber(); checkFarmingActivity(); checkRegDate(); checkPassword();">
+                Submit
+              </button>
+            </form>
+          </div>
+    </div>
+  </div>
+  
+</body>
+<script src="/public/js/bootstrapjs/bootstrap.bundle.js"></script>
+<script src="/public/js/validation.js"></script>
+</html>

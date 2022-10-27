@@ -1,0 +1,89 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='./css/main.css')
+  title Ufarm
+body(style='background-image: url(./images/UFARM_\ landing_page.png); background-size: cover;')
+  nav.navbar.navbar-expand-lg
+    .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px')
+      a.navbar-brand(href='index.html')
+        img(src='./Images/U+FARM+Logo.png' width='160px')
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='index.html') Home
+          li.nav-item
+            a.nav-link(href='#') Products
+          li.nav-item
+            a.nav-link(href='#') Services
+          li.nav-item
+            a.nav-link(href='#') Blog
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              | Account
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href='login.html') Login
+              li
+                a.dropdown-item(href='#') Sign up
+          li.nav-item
+            a.nav-link(href='#') About
+  div(style='font-size: 30px; text-align: center; color: rgb(89, 88, 88)')
+    p.col-8
+      strong Please navigate to select a registration option below.
+  #carouselExampleDark.carousel.carousel-dark.slide(data-bs-ride='carousel' style='\
+  height: 450px;\
+  width: 1000px;\
+  margin-left: 150px;\
+  ')
+    .carousel-indicators
+      button.active(type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+      button(type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='1' aria-label='Slide 2')
+      button(type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='2' aria-label='Slide 3')
+    .carousel-inner(style='border-radius: 100px;')
+      .carousel-item.active(data-bs-interval='10000')
+        .card
+          h3.card-header AGRICULTURAL OFFICER
+          .card-body
+            h3.card-title(style='color: #ffffff; margin-top: 100px;')
+              | Click the button below to begin registering
+            a.btn.btn-primary.cardbtn(href='aoregister.html' style='margin-top: 100px;') Register
+      .carousel-item(data-bs-interval='2000')
+        .card
+          h3.card-header FARMER ONE
+          .card-body
+            h3.card-title(style='color: #ffffff; margin-top: 100px;')
+              | Click the button below to begin registering
+            a.btn.btn-primary.cardbtn(href='foregister.html' style='margin-top: 100px;')
+              | Register
+      .carousel-item
+        .card
+          h3.card-header URBAN FARMER
+          .card-body
+            h3.card-title(style='color: #ffffff; margin-top: 100px;')
+              | Click the button below to begin registering
+            a.btn.btn-primary.cardbtn(href='ufregister.html' style='margin-top: 100px;')
+              | Register
+    button.carousel-control-prev(type='button' data-bs-target='#carouselExampleDark' data-bs-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    button.carousel-control-next(type='button' data-bs-target='#carouselExampleDark' data-bs-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.visually-hidden Next
+  .button2(style='\
+  margin-left: 200px;\
+  margin-top: 50px;\
+  font-size: 25px;\
+  color: black;\
+  ')
+    p
+      strong Already registered?
+      br
+      a.btn.btn-primary(href='/login.html' style='margin-top: 20px;') Log in
+script(src='./js/bootstrapjs/bootstrap.bundle.js')
+script(src='./js/validation.js')

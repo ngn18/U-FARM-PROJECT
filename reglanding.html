@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/bootstrapcss/bootstrap.css" />
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <title>Ufarm</title>
+</head>
+
+<body style="background-image: url(/public/Images/UFARM_landing_page.png)">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid" style="margin-left: 70px; margin-top: 0px; font-size: 25px">
+            <a class="navbar-brand" href="index.html"><img src="/public/Images/U+FARM+Logo.png" width="160px" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Sign up</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="font-size: 30px; text-align: center; color: rgb(89, 88, 88)">
+        <p class="col-8"><strong>Please navigate to select a registration option below.</strong></p>
+    </div>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="
+        height: 450px;
+        width: 1000px;
+        margin-left: 150px;
+      ">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="border-radius: 100px;">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <div class="card">
+                    <h3 class="card-header">AGRICULTURAL OFFICER</h3>
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #ffffff; margin-top: 100px;">
+                            Click the button below to begin registering
+                        </h3>
+                        <a href="aoregister.html" class="btn btn-primary cardbtn"
+                            style="margin-top: 100px;">Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="card">
+                    <h3 class="card-header">FARMER ONE</h3>
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #ffffff; margin-top: 100px;">
+                            Click the button below to begin registering
+                        </h3>
+                        <a href="foregister.html" class="btn btn-primary cardbtn" style="margin-top: 100px;"> Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <h3 class="card-header">URBAN FARMER</h3>
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #ffffff; margin-top: 100px;">
+                            Click the button below to begin registering
+                        </h3>
+                        <a href="ufregister.html" class="btn btn-primary cardbtn" style="margin-top: 100px;"> Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="button2" style="
+        margin-left: 200px;
+        margin-top: 50px;
+        font-size: 25px;
+        color: black;
+      ">
+        <p>
+            <strong>Already registered?</strong> <br>
+            <a href="/login.html" class="btn btn-primary" style="margin-top: 20px;">Log in</a>
+        </p>
+    </div>
+</body>
+
+<script src="/public/js/bootstrapjs/bootstrap.bundle.js"></script>
+<script src="/public/js/validation.js"></script>
+
+</html>
