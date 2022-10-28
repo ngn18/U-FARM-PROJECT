@@ -17,10 +17,12 @@ const Registering = require('./models/User');
 // const Image = require('./models/Farmerupload');//New line
 
 // Importing route files
-const registrationRoutes = require('./routes/registerRoutes');
-// const authRoute = require('./routes/authRoute');
+const registeringRoutes = require('./routes/registerRoutes');
+const foRoutes = require('./routes/fo-routes');
+const ufRoutes = require('./routes/uf-routes');
+const authRoute = require('./routes/authRoute');
 // const bodyParser = require('body-parser');//New line
-// const { fstat } = require('fs');
+const { fstat } = require('fs');
 
 //Instantiations
 const app = express();
@@ -54,37 +56,39 @@ app.use(expressSession);
 //Passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(Registering.createStrategy());
-passport.serializeUser(Registering.serializeUser());
-passport.deserializeUser(Registering.deserializeUser());
+// passport.use(Registering.createStrategy());
+// passport.serializeUser(Registering.serializeUser());
+// passport.deserializeUser(Registering.deserializeUser());
 
 // To parse URL encoded data
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.urlencoded({ extended: false }));//New line
 // app.use(bodyParser.json());//New line
 
 //Routes(for using imported routes)
-app.use('/', registrationRoutes);
-// app.use('/', authRoute);
+app.use('/', registeringRoutes);
+app.use('/', foRoutes);
+app.use('/', ufRoutes);
+app.use('/', authRoute);
 
 //New line   upload.single('productimage'),
-app.post('/ufarmerupload', (req, res, next) => {
-  var obj = {
-    name: req.body.name,
-    desc: req.body.desc,
-    image: {
-      data: fs.readFileSync(path.join(__dirname + '/public/uploads' + req.file.filename)),
-      contentType: 'image/png'
-    }
-  }
-  Image.create(obj, (err, item) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.redirect('/');
-    }
-  });
-});
+// app.post('/ufarmerupload', (req, res, next) => {
+//   var obj = {
+//     name: req.body.name,
+//     desc: req.body.desc,
+//     image: {
+//       data: fs.readFileSync(path.join(__dirname + '/public/uploads' + req.file.filename)),
+//       contentType: 'image/png'
+//     }
+//   }
+//   Image.create(obj, (err, item) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.redirect('/');
+//     }
+//   });
+// });
 
 // Rendering pug file
 app.get('/aoregister', (req, res) => {

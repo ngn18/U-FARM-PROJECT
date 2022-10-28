@@ -17,8 +17,11 @@ router.post('/foregister', async (req, res) => {
     try {
         const user = new Registering(req.body);
         let uniquenumberExist = await Registering.findOne({uniquenumber:req.body.uniquenumber});
+        let ninExist = await Registering.findOne({nin:req.body.nin});
         if(uniquenumberExist){
             return res.status(400).send('This Unique Number is already registered')
+        } else if(ninExist){
+            return res.status(400).send('This NIN Number is already registered')
         } else {
             await Registering.register(user, req.body.password, (error) =>{
                 if (error) {

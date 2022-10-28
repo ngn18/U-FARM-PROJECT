@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
     },
 
     nin: {
-        type: Number,
+        type: String,
         required: true,
         trim: true
     },
@@ -66,19 +66,17 @@ const userSchema = new mongoose.Schema({
 
     directions: {
         type: String,
-        required: true,
         trim: true
     },
 
     residence: {
         type: String,
-        required: true,
         trim: true
     },
 
     yearsofresidence: {
         type: String,
-        required: true,
+        // required: true,
         trim: true
     },
 

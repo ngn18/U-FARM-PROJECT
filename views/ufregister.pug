@@ -41,7 +41,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       br
       p(style='font-size: 20px;') Register as an Urban Farmer today
       .card-body(style='margin-top: 25px; font-size: 20px;')
-        form#register.form(method='post' name='registration' action='/register')
+        form#register.form(method='post' name='registration' action='/ufregister')
           .row
             .mb-3.col-sm-6
               label.form-label(for='uniquenumber') Unique Number
@@ -79,10 +79,10 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               input#regdate.form-control(type='text' name='regdate')
             .mb-3.col-sm-6
               label.form-label(for='password1') Password
-              input#password1.form-control(type='password' name='password1')
+              input#password1.form-control(type='password' name='password')
             .mb-3.col-sm-6
               label.form-label(for='password2') Password (Again)
-              input#password2.form-control(type='password' name='password2')
+              input#password2.form-control(type='password' name='passwordagain')
           .mb-3.form-check
             input#exampleCheck1.form-check-input(type='checkbox')
             label.form-check-label(for='exampleCheck1') Check me out
