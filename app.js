@@ -21,7 +21,7 @@ const registeringRoutes = require('./routes/registerRoutes');
 const foRoutes = require('./routes/fo-routes');
 const ufRoutes = require('./routes/uf-routes');
 const authRoute = require('./routes/authRoute');
-// const bodyParser = require('body-parser');//New line
+const loginRoute = require('./routes/loginRoutes');
 const { fstat } = require('fs');
 
 //Instantiations
@@ -70,6 +70,7 @@ app.use('/', registeringRoutes);
 app.use('/', foRoutes);
 app.use('/', ufRoutes);
 app.use('/', authRoute);
+app.use('/', loginRoute);
 
 //New line   upload.single('productimage'),
 // app.post('/ufarmerupload', (req, res, next) => {
@@ -97,7 +98,7 @@ app.get('/aoregister', (req, res) => {
   
 app.post("/aoregister", (req, res) => {
   console.log(req.body);
- res.redirect("aoregister");
+ res.redirect("login");
 });
 
 app.get('/login', (req, res) => {
@@ -115,7 +116,7 @@ app.get('/foregister', (req, res) => {
   
 app.post("/foregister", (req, res) => {
   console.log(req.body);
- res.redirect("foregister");
+ res.redirect("login");
 });
 
 app.get('/ufregister', (req, res) => {
@@ -124,7 +125,7 @@ app.get('/ufregister', (req, res) => {
   
 app.post("/ufregister", (req, res) => {
   console.log(req.body);
- res.redirect("ufregister");
+ res.redirect("login");
 });
 
   // Should be the last route before the bootstrapping server
