@@ -93,7 +93,7 @@ app.use('/', loginRoute);
 
 // Rendering pug file
 app.get('/aoregister', (req, res) => {
-  res.render('aoregister');
+  res.render('aoregisters');
 });
   
 app.post("/aoregister", (req, res) => {
