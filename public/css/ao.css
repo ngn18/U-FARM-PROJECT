@@ -9,20 +9,19 @@ body {
     font-size: 20px;
 }
 
-.nav-link {
-    margin-right: 40px;
-    color: black;
-}
-
 .navbar-brand {
     font-size: 35px;
     font-weight: bold;
 }
 
+.dropdown-item {
+    font-size: 20px;
+}
+
 .section1 {
     height: 308px;
     width: 700px;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-left: 65px;
     border-radius: 30px;
     box-shadow: 0px 0px 4px 4px rgb(210, 208, 208);
@@ -30,10 +29,19 @@ body {
 
 .maincard {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 40px;
     width: 1600px;
     height: 1750px;
     border-radius: 50px;
+    box-shadow: 0px 0px 150px 150px green;
+}
+
+.maincard1 {
+    margin: auto;
+    margin-top: 200px;
+    width: 1600px;
+    height: 500px;
+    border-radius: 100px;
     box-shadow: 0px 0px 150px 150px green;
 }
 
@@ -61,11 +69,12 @@ body {
 }
 
 .nav-link {
+    margin-right: 40px;
     color: grey;
 }
 
 .nav-link:hover {
-    color: red;
+    color: black;
 }
 
 .subcard {

@@ -22,7 +22,9 @@ const foRoutes = require('./routes/fo-routes');
 const ufRoutes = require('./routes/uf-routes');
 const authRoute = require('./routes/authRoute');
 const loginRoute = require('./routes/loginRoutes');
-const { fstat } = require('fs');
+const indexRoute = require('./routes/indexRoutes');
+const reglandingRoute = require('./routes/reglandingRoutes');
+// const { fstat } = require('fs');
 
 //Instantiations
 const app = express();
@@ -71,6 +73,8 @@ app.use('/', foRoutes);
 app.use('/', ufRoutes);
 app.use('/', authRoute);
 app.use('/', loginRoute);
+app.use('/', indexRoute);
+app.use('/', reglandingRoute);
 
 //New line   upload.single('productimage'),
 // app.post('/ufarmerupload', (req, res, next) => {
@@ -93,7 +97,7 @@ app.use('/', loginRoute);
 
 // Rendering pug file
 app.get('/aoregister', (req, res) => {
-  res.render('aoregisters');
+  res.render('aoregister');
 });
   
 app.post("/aoregister", (req, res) => {

@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
   link(rel='stylesheet' href='./css/main.css')
   title Ufarm
-body(style='background-image: url(./images/UFARM_\ landing_page.png); background-size: cover;')
+body(style='background-image: url(./images/UFARM_landing_page.png); background-size: cover;')
   nav.navbar.navbar-expand-lg
     .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px')
       a.navbar-brand(href='index.html')
@@ -16,7 +16,7 @@ body(style='background-image: url(./images/UFARM_\ landing_page.png); background
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item
-            a.nav-link.active(aria-current='page' href='index.html') Home
+            a.nav-link.active(aria-current='page' href='/index') Home
           li.nav-item
             a.nav-link(href='#') Products
           li.nav-item
@@ -28,7 +28,7 @@ body(style='background-image: url(./images/UFARM_\ landing_page.png); background
               | Account
             ul.dropdown-menu
               li
-                a.dropdown-item(href='login.html') Login
+                a.dropdown-item(href='/login') Login
               li
                 a.dropdown-item(href='#') Sign up
           li.nav-item
@@ -52,14 +52,14 @@ body(style='background-image: url(./images/UFARM_\ landing_page.png); background
           .card-body
             h3.card-title(style='color: #ffffff; margin-top: 100px;')
               | Click the button below to begin registering
-            a.btn.btn-primary.cardbtn(href='aoregister.html' style='margin-top: 100px;') Register
+            a.btn.btn-primary.cardbtn(href='/aoregister' style='margin-top: 100px;') Register
       .carousel-item(data-bs-interval='2000')
         .card
           h3.card-header FARMER ONE
           .card-body
             h3.card-title(style='color: #ffffff; margin-top: 100px;')
               | Click the button below to begin registering
-            a.btn.btn-primary.cardbtn(href='foregister.html' style='margin-top: 100px;')
+            a.btn.btn-primary.cardbtn(href='/foregister' style='margin-top: 100px;')
               | Register
       .carousel-item
         .card
@@ -67,7 +67,7 @@ body(style='background-image: url(./images/UFARM_\ landing_page.png); background
           .card-body
             h3.card-title(style='color: #ffffff; margin-top: 100px;')
               | Click the button below to begin registering
-            a.btn.btn-primary.cardbtn(href='ufregister.html' style='margin-top: 100px;')
+            a.btn.btn-primary.cardbtn(href='/ufregister' style='margin-top: 100px;')
               | Register
     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleDark' data-bs-slide='prev')
       span.carousel-control-prev-icon(aria-hidden='true')
@@ -84,6 +84,6 @@ body(style='background-image: url(./images/UFARM_\ landing_page.png); background
     p
       strong Already registered?
       br
-      a.btn.btn-primary(href='/login.html' style='margin-top: 20px;') Log in
+      a.btn.btn-primary(href='/login' style='margin-top: 20px;') Log in
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
 script(src='./js/validation.js')

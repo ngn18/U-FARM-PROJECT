@@ -3,50 +3,51 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='/public/css/bootstrapcss/bootstrap.css')
-  link(rel='stylesheet' href='/public/css/main.css')
+  link(rel='stylesheet' href='/css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='/css/main.css')
   title Ufarm
-nav.navbar.navbar-expand-lg
-  .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
-    a.navbar-brand(href='#')
-      img(src='/public/Images/U+FARM+Logo.png' width='160px')
-    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        li.nav-item
-          a.nav-link.active(aria-current='page' href='#') Home
-        li.nav-item
-          a.nav-link(href='#') Products
-        li.nav-item
-          a.nav-link(href='#') Services
-        li.nav-item
-          a.nav-link(href='#') Blog
-        li.nav-item.dropdown
-          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-            | Account
-          ul.dropdown-menu
-            li
-              a.dropdown-item(href='login.html') Login
-            li
-              a.dropdown-item(href='reglanding.html') Sign up
-        li.nav-item
-          a.nav-link(href='#') About
-.caption
-  p.col-8
-    | Welcome to 
-    strong(style='color: green;') Masajja Division
-    |  Urban farming Initiative.
-div(style='display: flex;')
-  div(style='margin-top: 100px; margin-left: 200px;')
-    a(href='reglanding.html')
-      button.btn-primary.cardbtn2(type='button') Get Started
-  div(style='margin-top: 100px; margin-left: 200px;')
-    a(href='products.html')
-      button.btn-primary.cardbtn2(type='button') Begin Shopping
-.button2(style='margin-left: 200px; margin-top: 10px; font-size: 25px; color: black;')
-  p
-    | Already registered with us? 
-    a(href='/login.html' style='text-decoration: none;') Log in
-script(src='/public/js/bootstrapjs/bootstrap.bundle.js')
-script(src='/public/js/validation.js')
+body(style='background-image: url(./Images/UFARM_landing_page.png); background-size: cover;')
+  nav.navbar.navbar-expand-lg
+    .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
+      a.navbar-brand(href='#')
+        img(src='./Images/U+FARM+Logo.png' width='160px')
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='#') Home
+          li.nav-item
+            a.nav-link(href='#') Products
+          li.nav-item
+            a.nav-link(href='#') Services
+          li.nav-item
+            a.nav-link(href='#') Blog
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              | Account
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href='/login') Login
+              li
+                a.dropdown-item(href='/reglanding') Sign up
+          li.nav-item
+            a.nav-link(href='#') About
+  .caption
+    p.col-8
+      | Welcome to 
+      strong(style='color: green;') Masajja Division
+      |  Urban farming Initiative.
+  div(style='display: flex;')
+    div(style='margin-top: 100px; margin-left: 200px;')
+      a(href='/reglanding')
+        button.btn-primary.cardbtn2(type='button') Get Started
+    div(style='margin-top: 100px; margin-left: 200px;')
+      a(href='/products')
+        button.btn-primary.cardbtn2(type='button') Begin Shopping
+  .button2(style='margin-left: 200px; margin-top: 10px; font-size: 25px; color: black;')
+    p
+      | Already registered with us? 
+      a(href='/login' style='text-decoration: none;') Log in
+script(src='./js/bootstrapjs/bootstrap.bundle.js')
+script(src='./js/validation.js')
