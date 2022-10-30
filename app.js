@@ -22,7 +22,7 @@ const registeringRoutes = require('./routes/registerRoutes');
 const foRoutes = require('./routes/fo-routes');
 const ufRoutes = require('./routes/uf-routes');
 const authRoute = require('./routes/authRoute');
-const loginRoute = require('./routes/loginRoutes');
+// const loginRoute = require('./routes/loginRoutes');
 const indexRoute = require('./routes/indexRoutes');
 const reglandingRoute = require('./routes/reglandingRoutes');
 // const { fstat } = require('fs');
@@ -73,7 +73,7 @@ app.use('/', registeringRoutes);
 app.use('/', foRoutes);
 app.use('/', ufRoutes);
 app.use('/', authRoute);
-app.use('/', loginRoute);
+// app.use('/', loginRoute);
 app.use('/', indexRoute);
 app.use('/', reglandingRoute);
 

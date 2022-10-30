@@ -43,15 +43,15 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       .card-body(style='margin-top: 25px; font-size: 20px;')
         form#login.form(method='post' name='signin' action='/login')
           .mb-3
-            label.form-label(for='unique') Unique ID
-            input#unique.form-control(type='unique' name='unique')
+            label.form-label(for='uniquenumber') Unique Number
+            input#unique.form-control(type='text' name='uniquenumber' placeholder='Enter your Unique Number ')
           .mb-3
             label.form-label(for='exampleInputPassword1') Password
-            input#exampleInputPassword1.form-control(type='password')
+            input#exampleInputPassword1.form-control(type='password' name='password')
           .mb-3.form-check
             input#exampleCheck1.form-check-input(type='checkbox')
             label.form-check-label(for='exampleCheck1') Check me out
-          button.btn.btn-primary(type='submit') Log In
+          button.btn.btn-primary(type='submit' name='login') Log In
         br
         p
           | Don&apos;t have an account with us? 
@@ -59,4 +59,4 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
           a(href='reglanding.html' style='text-decoration: none;') Register now
 footer.footer
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
-script(src='./js/validation.js')
+//- script(src='./js/validation.js')

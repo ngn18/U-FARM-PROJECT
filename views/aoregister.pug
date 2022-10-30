@@ -45,7 +45,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
           .row
             .mb-3.col-sm-6
                 label.form-label(for='uniquenumber') Unique Number
-                input#uniquenumber.form-control(type='uniquenumber' name='uniquenumber')
+                input#uniquenumber.form-control(type='text' name='uniquenumber')
             .mb-3.col-sm-6
                 label.form-label(for='ward') Ward
                 input#ward.form-control(type='text' name='ward')
@@ -86,6 +86,8 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
             .mb-3.form-check
               input#exampleCheck1.form-check-input(type='checkbox')
               label.form-check-label(for='exampleCheck1') Check me out
-            button.btn.btn-primary(type='submit') Submit 
+            button.btn.btn-primary(type='submit') Submit
+      form(method='post' action='/logout')
+        button.btn.btn-primary(type='submit') Log out 
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
 script(src='./js/validation.js')
