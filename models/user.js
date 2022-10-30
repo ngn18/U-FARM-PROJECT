@@ -78,19 +78,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         // required: true,
         trim: true
-    },
-
-    password: {
-        type: String,
-        required: true,
-        trim: true
-    },
-
-    passwordagain: {
-        type: String,
-        required: true,
-        trim: true
     }
+
+    // password: {
+    //     type: String,
+    //     required: true
+    // },
+
+    // passwordagain: {
+    //     type: String,
+    //     required: true
+    // }
 })
 
 userSchema.plugin(passportLocalMongoose, {

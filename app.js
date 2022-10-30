@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const config = require('./config/db');
 const passport = require('passport');
 const multer = require('multer');
+const bodyParser = require('body-parser');
 //Defining express sesssion
 const expressSession = require('express-session')({
   secret: 'secret',
@@ -58,14 +59,14 @@ app.use(expressSession);
 //Passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
-// passport.use(Registering.createStrategy());
-// passport.serializeUser(Registering.serializeUser());
-// passport.deserializeUser(Registering.deserializeUser());
+passport.use(Registering.createStrategy()); // For authentication, sessions serializing and deserializing
+passport.serializeUser(Registering.serializeUser());// Tracking user's serial number.
+passport.deserializeUser(Registering.deserializeUser());
 
 // To parse URL encoded data
 // app.use(express.urlencoded({ extended: false }));
-// app.use(bodyParser.urlencoded({ extended: false }));//New line
-// app.use(bodyParser.json());//New line
+app.use(bodyParser.urlencoded({ extended: true }));//New line
+app.use(bodyParser.json());//New line
 
 //Routes(for using imported routes)
 app.use('/', registeringRoutes);
