@@ -9,7 +9,7 @@ head
 body(style='background-image: url(./images/UFARM_login_page.png); background-size: cover;')
   nav.navbar.navbar-expand-lg
     .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
-      a.navbar-brand(href='/index.html')
+      a.navbar-brand(href='/index')
         img(src='./Images/U+FARM+Logo.png' width='160px')
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
@@ -18,7 +18,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
           li.nav-item
             a.nav-link.active(aria-current='page' href='/index') Home
           li.nav-item
-            a.nav-link(href='#') Products
+            a.nav-link(href='/products') Products
           li.nav-item
             a.nav-link(href='#') Services
           li.nav-item
@@ -30,7 +30,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               li
                 a.dropdown-item(href='#') Login
               li
-                a.dropdown-item(href='reglanding.html') Sign up
+                a.dropdown-item(href='/reglanding') Sign up
           li.nav-item
             a.nav-link(href='#') About
   .col-3(style='margin-left: 100px; margin-top: 50px;')
@@ -56,7 +56,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
         p
           | Don&apos;t have an account with us? 
           br
-          a(href='reglanding.html' style='text-decoration: none;') Register now
+          a(href='/reglanding' style='text-decoration: none;') Register now
 footer.footer
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
 //- script(src='./js/validation.js')

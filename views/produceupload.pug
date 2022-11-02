@@ -1,0 +1,88 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='./css/main.css')
+  title Ufarm
+body(style='background-image: url(./images/UFARM_login_page.png); background-size: cover;')
+  nav.navbar.navbar-expand-lg
+    .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
+      a.navbar-brand(href='/index')
+        img(src='./Images/U+FARM+Logo.png' width='160px')
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='/index') Home
+          li.nav-item
+            a.nav-link(href='/products') Products
+          li.nav-item
+            a.nav-link(href='#') Services
+          li.nav-item
+            a.nav-link(href='#') Blog
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              | Account
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href='/login') Login
+              li
+                a.dropdown-item(href='/reglanding') Sign up
+          li.nav-item
+            a.nav-link(href='#') About
+  .col-6(style='margin-left: 100px; margin-top: 10px;')
+    .register
+      .card-header(style='font-size: 25px; text-align: center;')
+        | Welcome to 
+        img(src='./Images/U+FARM+Logo.png' width='100px' style='margin-top: -12px;')
+      br
+      p(style='font-size: 20px;') Register as an Urban Farmer today
+      .card-body(style='margin-top: 25px; font-size: 20px;')
+        form#register.form(method='post' name='produceupload' action='/produceupload')
+          .row
+            .mb-3.col-sm-6
+              label.form-label(for='uniquenumber') Unique Number   
+              input#uniquenumber.form-control(type='text' name='uniquenumber')
+            .mb-3.col-sm-6
+              label.form-label(for='firstname') First Name  
+              input#uniquenumber.form-control(type='text' name='firstname')
+            .mb-3.col-sm-6
+              label.form-label(for='lastname') Last Name  
+              input#uniquenumber.form-control(type='text' name='lastname')
+            .mb-3.col-sm-6
+              label.form-label(for='ward') Ward  
+              input#uniquenumber.form-control(type='text' name='ward')
+            .mb-3.col-sm-6
+              label.form-label(for='productcategory') Product Category
+              input#uniquenumber.form-control(type='text' name='productcategory')
+            .mb-3.col-sm-6
+              label.form-label(for='producename') Produce Name
+              input#ward.form-control(type='text' name='producename')
+            .mb-3.col-sm-6
+              label.form-label(for='quantity') Quantity
+              input#firstname.form-control(type='number' name='quantity')
+            .mb-3.col-sm-6
+              label.form-label(for='price') Price
+              input#lastname.form-control(type='number' name='price')
+            .mb-3.col-sm-6
+              label.form-label(for='modeofdelivery') Mode of Delivery
+              input#dateofbirth.form-control(type='text' name='modeofdelivery')
+            .mb-3.col-sm-6
+              label.form-label(for='modeofpayment') Mode of Payment
+              input#nin.form-control(type='text' name='modeofpayment')
+            .mb-3.col-sm-6
+              label.form-label(for='dateofupload') Date of Upload
+              input#telephone.form-control(type='date' name='dateofupload')
+            .mb-3.col-sm-6
+              label.form-label(for='image') Upload Image
+              input#activity.form-control(type='file' name='image')
+          .mb-3.form-check
+            input#exampleCheck1.form-check-input(type='checkbox')
+            label.form-check-label(for='exampleCheck1') Check me out
+          button.btn.btn-primary(type='submit')
+            | Submit
+script(src='./js/bootstrapjs/bootstrap.bundle.js')
+script(src='./js/validation.js')

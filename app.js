@@ -15,16 +15,19 @@ const expressSession = require('express-session')({
 
 //Import the user model
 const Registering = require('./models/User');
-// const Image = require('./models/Farmerupload');//New line
+const ProduceUpload = require('./models/Farmerupload');//New line
 
 // Importing route files
 const registeringRoutes = require('./routes/registerRoutes');
 const foRoutes = require('./routes/fo-routes');
 const ufRoutes = require('./routes/uf-routes');
 const authRoute = require('./routes/authRoute');
-// const loginRoute = require('./routes/loginRoutes');
 const indexRoute = require('./routes/indexRoutes');
 const reglandingRoute = require('./routes/reglandingRoutes');
+const productRoute = require('./routes/productsRoutes');
+const vegproductRoute = require('./routes/productsRoutes');
+const animalproductRoute = require('./routes/productsRoutes');
+const produceuploadRoute = require('./routes/produploadRoutes');
 // const { fstat } = require('fs');
 
 //Instantiations
@@ -73,9 +76,15 @@ app.use('/', registeringRoutes);
 app.use('/', foRoutes);
 app.use('/', ufRoutes);
 app.use('/', authRoute);
-// app.use('/', loginRoute);
 app.use('/', indexRoute);
 app.use('/', reglandingRoute);
+app.use('/', productRoute);
+app.use('/', vegproductRoute);
+app.use('/', animalproductRoute);
+app.use('/', produceuploadRoute);
+
+
+
 
 //New line   upload.single('productimage'),
 // app.post('/ufarmerupload', (req, res, next) => {

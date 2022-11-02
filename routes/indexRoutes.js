@@ -4,7 +4,7 @@ const multer = require('multer');
 
 // Importing model
 const Registering = require('../models/User');
-// const Image = require('../models/Farmerupload');
+const Image = require('../models/Farmerupload');
 
 // Writing a route
 router.get('/index',(req, res) => {

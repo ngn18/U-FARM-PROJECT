@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(210, 208, 208);
+    padding-bottom: 40px;
+}
+
+.navbar-brand {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.section1 {
+    height: 308px;
+    width: 700px;
+    margin-top: 60px;
+    margin-left: 65px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 4px rgb(210, 208, 208);
+}
+
+.maincard {
+    margin: auto;
+    margin-top: 50px;
+    width: 1600px;
+    height: 800px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px 4px rgb(174, 173, 173);
+}
+
+.stats {
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 400px;
+    background-color: green;
+    color: white;
+    border-radius: 30px;
+}
+
+.vert {
+    display: flex;
+}
+
+.heading {
+    font-size: 20px;
+}
+
+.offcanvas-body {
+    background-color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff;
+}

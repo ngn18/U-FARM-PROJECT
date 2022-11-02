@@ -9,14 +9,14 @@ head
 body(style='background-image: url(./images/UFARM_login_page.png); background-size: cover;')
   nav.navbar.navbar-expand-lg
     .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
-      a.navbar-brand(href='/index.html')
+      a.navbar-brand(href='/index')
         img(src='./Images/U+FARM+Logo.png' width='160px')
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item
-            a.nav-link.active(aria-current='page' href='../index.html') Home
+            a.nav-link.active(aria-current='page' href='../index') Home
           li.nav-item
             a.nav-link(href='#') Products
           li.nav-item
@@ -28,9 +28,9 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               | Account
             ul.dropdown-menu
               li
-                a.dropdown-item(href='login.html') Login
+                a.dropdown-item(href='/login') Login
               li
-                a.dropdown-item(href='reglanding.html') Sign up
+                a.dropdown-item(href='/reglanding') Sign up
           li.nav-item
             a.nav-link(href='#') About
   .col-6(style='margin-left: 100px; margin-top: 10px;')
@@ -57,7 +57,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               input#lastname.form-control(type='text' name='lastname')
             .mb-3.col-sm-6
               label.form-label(for='dob') Date of birth
-              input#dateofbirth.form-control(type='text' name='dateofbirth')
+              input#dateofbirth.form-control(type='date' name='dateofbirth')
             .mb-3.col-sm-6
               label(for='gender form-label') Gender:
               .radio
@@ -76,7 +76,7 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               input#activity.form-control(type='text' name='activity')
             .mb-3.col-sm-6
               label.form-label(for='regdate') Date of Registration
-              input#regdate.form-control(type='text' name='regdate')
+              input#regdate.form-control(type='date' name='regdate')
             .mb-3.col-sm-6
               label.form-label(for='directions') Directions
               input#directions.form-control(type='text' name='directions')
@@ -88,6 +88,9 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
             .mb-3.col-sm-6
               label.form-label(for='years') Years of Residence in Ward
               input#years.form-control(type='text' name='yearsofresidence')
+            .mb-3.col-sm-6
+              label.form-label(for='role') Role
+              input#years.form-control(type='text' name='role')
             .mb-3.col-sm-6
               label.form-label(for='password1') Password
               input#password1.form-control(type='password' name='password')

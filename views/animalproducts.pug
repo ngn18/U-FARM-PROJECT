@@ -1,0 +1,117 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='./css/ao.css')
+  title Ufarm
+nav.navbar.navbar-expand-lg
+  .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
+    a.navbar-brand(href='/index')
+      img(src='./Images/U+FARM+Logo.png' width='160px')
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link(aria-current='page' href='/index') Home
+        li.nav-item
+          a.nav-link(href='#') Products
+        li.nav-item
+          a.nav-link(href='#') Services
+        li.nav-item
+          a.nav-link(href='#') Blog
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Account
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='/login') Login
+            li
+              a.dropdown-item(href='/reglanding') Sign up
+        li.nav-item
+          a.nav-link(href='#') About
+nav.navbar
+  .container-fluid
+    button.navbar-toggler(style='margin-left: 1810px; margin-top: -140px;' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      span.navbar-toggler-icon
+    #offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      .offcanvas-header(style='background-color: green;')
+        h5#offcanvasNavbarLabel.offcanvas-title
+          img(src='./Images/U+FARM+Logo.png' width='160px')
+        button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+          li.nav-item
+            a.nav-link(style='color: #fff; font-weight: lighter; font-size: 25px; margin-left: 30px;' aria-current='page' href='/products') FRUITS
+          li.nav-item
+            a.nav-link(style='color: #fff; font-weight: lighter; font-size: 25px; margin-left: 30px;' href='/vegproducts') VEGETABLES
+          li.nav-item
+            a.nav-link(style='color: #fff; font-weight: lighter; font-size: 25px; margin-left: 30px;' href='#') ANIMAL PRODUCTS
+        form.d-flex.mt-3(style='margin-left: 30px;' role='search')
+          input.form-control.me-2(type='search' placeholder='Search Products' aria-label='Search')
+          button.btn.btn-outline-success(style='background-color: #ffffff;' type='submit') Search
+div
+  p.heading1
+    | WELCOME TO
+    img(src='./Images/U+FARM+Logo.png' width='220px' style='margin-bottom: 30px;')
+    | SHOPPING PAGE
+    br
+    |       SHOP FOR THE FRESHEST AGRICULTURAL PRODUCTS HERE.
+.card.maincard2
+  div(style='display: flex;')
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/beef.png' alt='...')
+      .card-body
+        h5.card-title Beef
+        p.card-text(style='color: green; font-weight: bold;') shs.5,000/= per kg
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/chicken.png' alt='...')
+      .card-body
+        h5.card-title Chicken
+        p.card-text(style='color: green; font-weight: bold;') shs.15,000/= each
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/goats meat.png' alt='...')
+      .card-body
+        h5.card-title Goats meat
+        p.card-text(style='color: green; font-weight: bold;') shs.8,000/= per kg
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/hen eggs.png' alt='...')
+      .card-body
+        h5.card-title Chicken Eggs
+        p.card-text(style='color: green; font-weight: bold;') shs.400/= each
+        a.btn.btn-primary.butn(href='#') Add to cart
+  div(style='display: flex;')
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/milk.png' alt='...')
+      .card-body
+        h5.card-title Fresh Milk
+        p.card-text(style='color: green; font-weight: bold;') shs.1,500/= per litre
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/pork.png' alt='...')
+      .card-body
+        h5.card-title Pork
+        p.card-text(style='color: green; font-weight: bold;') shs.10,000/= per kg
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/quail eggs.png' alt='...')
+      .card-body
+        h5.card-title Quail Eggs
+        p.card-text(style='color: green; font-weight: bold;') shs.8,000/= each
+        a.btn.btn-primary.butn(href='#') Add to cart
+    .card.subcard
+      img.card-img-top.cardimg(src='./Images/animalproducts/tilapia.png' alt='...')
+      .card-body
+        h5.card-title Tilapia
+        p.card-text(style='color: green; font-weight: bold;') shs.3,000/= per kg
+        a.btn.btn-primary.butn(href='#') Add to cart
+  div(style='margin-top: 100px; margin-left: 200px;')
+    a(href='reglanding.html')
+      button.btn-primary.cardbtn2(type='button') Proceed to Checkout
+script(src='/js/bootstrapjs/bootstrap.bundle.js')
+script(src='/js/validation.js')
