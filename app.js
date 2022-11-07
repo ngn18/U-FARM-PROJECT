@@ -15,7 +15,7 @@ const expressSession = require('express-session')({
 
 //Import the user model
 const Registering = require('./models/User');
-const ProduceUpload = require('./models/Farmerupload');//New line
+// const ProduceUpload = require('./models/Farmerupload');//New line
 
 // Importing route files
 const registeringRoutes = require('./routes/registerRoutes');

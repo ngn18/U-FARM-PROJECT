@@ -18,7 +18,7 @@ var storage = multer.diskStorage({
 });
 
 // instantiate variable upload to store multer functionality to upload image
-var upload = multer({ storage: storage })
+var upload = multer({ storage })
 
 
 // Get route for uploading produce
@@ -28,8 +28,8 @@ router.get('/produceupload', async (req, res) => {
 });
 
 // Post route for image upload
-router.post('/produceupload', upload.single('image'),async (req, res) => {
-    console.log(req.body);
+router.post('/produceupload', upload.single('image'), async (req, res, next) => {
+    console.log(req.file);
     try {
         const produce = new ProduceUpload(req.body);
         produce.image = req.file.path;
