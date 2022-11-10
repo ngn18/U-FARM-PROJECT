@@ -41,23 +41,28 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       br
       p(style='font-size: 20px;') Register as a Farmer One today
       .card-body(style='margin-top: 25px; font-size: 20px;')
-        form#register.form(method='post' name='registration' action='/foregister')
+        form#register.form(method='post' name='registration' action='/foregister' onsubmit="return Validate();")
           .row
             .mb-3.col-sm-6
               label.form-label(for='uniquenumber') Unique Number
               input#uniquenumber.form-control(type='uniquenumber' name='uniquenumber')
+              small#uniquenumberError 
             .mb-3.col-sm-6
               label.form-label(for='ward') Ward
               input#ward.form-control(type='text' name='ward')
+              small#wardError 
             .mb-3.col-sm-6
               label.form-label(for='firstName') First Name
               input#firstname.form-control(type='text' name='firstname')
+              small#firstnameError
             .mb-3.col-sm-6
               label.form-label(for='lastName') Last Name
               input#lastname.form-control(type='text' name='lastname')
+              small#lastnameError
             .mb-3.col-sm-6
               label.form-label(for='dob') Date of birth
               input#dateofbirth.form-control(type='date' name='dateofbirth')
+              small#dateofbirthError
             .mb-3.col-sm-6
               label(for='gender form-label') Gender:
               .radio
@@ -65,42 +70,53 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
                 span Male
                 input#gender2(type='radio' name='gender' autocomplete='off' value='female')
                 span Female
+              small#genderError 
             .mb-3.col-sm-6
               label.form-label(for='nin') NIN
               input#nin.form-control(type='text' name='nin')
+              small#ninError
             .mb-3.col-sm-6
               label.form-label(for='telephone') Phone Number
               input#telephone.form-control(type='text' name='telephone')
+              small#telephoneError
             .mb-3.col-sm-6
               label.form-label(for='activity') Activity
               input#activity.form-control(type='text' name='activity')
+              small#activityError
             .mb-3.col-sm-6
               label.form-label(for='regdate') Date of Registration
               input#regdate.form-control(type='date' name='regdate')
+              small#regdateError
             .mb-3.col-sm-6
               label.form-label(for='directions') Directions
               input#directions.form-control(type='text' name='directions')
+              small#directionsError
             .mb-3.col-sm-6
               label(for='residence') Residence Type
               select#residence.drop(name='residence')
                 option(value='temporary') Temporary
                 option(value='permanent') Permanent
+              small#residenceError
             .mb-3.col-sm-6
               label.form-label(for='years') Years of Residence in Ward
               input#years.form-control(type='text' name='yearsofresidence')
+              small#yearsofresidenceError
             .mb-3.col-sm-6
               label.form-label(for='role') Role
               input#years.form-control(type='text' name='role')
+              small#roleError
             .mb-3.col-sm-6
               label.form-label(for='password1') Password
               input#password1.form-control(type='password' name='password')
+              small#passwordError
             .mb-3.col-sm-6
               label.form-label(for='password2') Password (Again)
               input#password2.form-control(type='password' name='passwordagain')
+              small#passwordagainError
           .mb-3.form-check
             input#exampleCheck1.form-check-input(type='checkbox')
             label.form-check-label(for='exampleCheck1') Check me out
-          button.btn.btn-primary(type='submit' onclick='checkEmail(); checkWard(); checkFirstName(); checkLastName(); checkDateOfBirth(); checkNin(); checkPhoneNumber(); checkFarmingActivity(); checkRegDate(); checkPassword();')
+          button.btn.btn-primary(type='submit')
             | Submit
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
 script(src='./js/validation.js')
