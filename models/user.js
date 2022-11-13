@@ -76,7 +76,6 @@ const userSchema = new mongoose.Schema({
 
     yearsofresidence: {
         type: String,
-        // required: true,
         trim: true
     },
 

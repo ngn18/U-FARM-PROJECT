@@ -1,24 +1,24 @@
 const mongoose = require('mongoose');
 const produceSchema = new mongoose.Schema({
-    // uniquenumber:{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Registering'
-    // },
+    uniquenumber:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Registering'
+    },
 
-    // firstname: {
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref: 'Registering'
-    // },
+    firstname: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Registering'
+    },
 
-    // lastname: {
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref: 'Registering'
-    // },
+    lastname: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Registering'
+    },
 
-    // ward: {
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref: 'Registering'
-    // },
+    ward: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Registering'
+    },
 
     productcategory: {
         type: String,

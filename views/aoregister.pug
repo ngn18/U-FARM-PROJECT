@@ -79,7 +79,9 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
                 input#regdate.form-control(type='date' name='regdate')
             .mb-3.col-sm-6
                 label.form-label(for='role') Role
-                input#regdate.form-control(type='text' name='role')
+                select#residence.drop(name='role')
+                  option(value='') Select Option
+                  option(value='agriculturalOfficer') AGRICULTURAL OFFICER
             .mb-3.col-sm-6
                 label.form-label(for='password') Password
                 input#password1.form-control(type='password' name='password')

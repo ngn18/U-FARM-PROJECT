@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const ProduceUpload = require('../models/Farmerupload');
@@ -22,13 +23,18 @@ var upload = multer({ storage })
 
 
 // Get route for uploading produce
-router.get('/produceupload', async (req, res) => {
-    let urbanFarmerList = await Registering.find({role: 'urbanfarmer'});
-    res.render('produceupload', {urbanfarmers:urbanFarmerList});
+// router.get('/produceupload', async (req, res) => {
+//     let urbanFarmerList = await Registering.find({role: 'urbanfarmer'});
+//     res.render('produceupload', {urbanfarmers:urbanFarmerList});
+// });
+
+router.get('/produceupload', connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
+  
+  res.render('produceupload', {currentUser: req.session.user});
 });
 
 // Post route for image upload
-router.post('/produceupload', upload.single('image'), async (req, res, next) => {
+router.post('/produceupload', connectEnsureLogin.ensureLoggedIn(), upload.single('image'), async (req, res, next) => {
     console.log(req.file);
     try {
         const produce = new ProduceUpload(req.body);

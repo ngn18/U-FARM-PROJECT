@@ -21,7 +21,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 
-// Writing a route
+// Writing a route(A.O Routes)
 router.get('/aoregister',(req, res) => {
     res.render('aoregister');
 });
@@ -52,15 +52,15 @@ router.post('/aoregister', async (req, res) => {
 });
 
 // Code to help me change the name being displayed in the pug file(front end) which the user will see from 'items' in the backend to 'farmerones' in the front end. Getting list of all farmerones in the database system.
-// router.get('/FarmerOneList', async (req,res) => {
-//     try{
-//         let items = await Registering.find({role:'farmerOne'});
-//         res.render('FOlist', {farmerones:items});
-//     } catch (error) {
-//         res.status(400).send('Unable to find farmer ones in the database');
-//         console.log(error);
-//     }
-// });
+router.get('/FarmerOneList', async (req,res) => {
+    try{
+        let items = await Registering.find({role:'farmerOne'});
+        res.render('FOlist', {farmerones:items});
+    } catch (error) {
+        res.status(400).send('Unable to find farmer ones in the database');
+        console.log(error);
+    }
+});
 
 // router.get('/produce',(req, res) => {
 //     res.render('produce-list');
