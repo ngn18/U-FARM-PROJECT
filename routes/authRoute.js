@@ -9,7 +9,17 @@ router.get("/login", (req, res) => {
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
     // console.log(req.body)
-	res.redirect("/aoregister");
+    req.session.user = req.user;
+    console.log('This is the current user', req.session.user);
+    if(req.user.role == 'agriculturalOfficer') {
+	  res.redirect("/aodashboard");
+    } else if (req.user.role == 'farmerOne') {
+      res.redirect("/fodashboard");
+    } else if (req.user.role == 'urbanFarmer') {
+      res.redirect("/ufdashboard");
+    } else {
+        res.send('Sorry, you are not a registered user') 
+    }
 });
 
 // Logout route

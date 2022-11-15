@@ -62,13 +62,5 @@ router.get('/FarmerOneList', async (req,res) => {
     }
 });
 
-// router.get('/produce',(req, res) => {
-//     res.render('produce-list');
-// });
-
-// router.post('/produce',(req, res) => {
-//     console.log(req.body);
-// });
-
 // Always MUST always be the last line in every routes file.
 module.exports = router;

@@ -5,7 +5,7 @@ const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const ProduceUpload = require('../models/Farmerupload');
-const Registering = require('../models/User');
+// const Registering = require('../models/User');
 
 // image upload
 // diskStorage is a method that accesses your computer.
@@ -29,7 +29,6 @@ var upload = multer({ storage })
 // });
 
 router.get('/produceupload', connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
-  
   res.render('produceupload', {currentUser: req.session.user});
 });
 
@@ -52,11 +51,40 @@ router.post('/produceupload', connectEnsureLogin.ensureLoggedIn(), upload.single
 //Getting/Displaying produce list-------
 router.get("/producelist", async (req, res) => {
 	try {
-		//const sort ={_id:-1}
+		// const sort = {_id:-1}
 		let products = await ProduceUpload.find().sort({$natural:-1});
 		res.render("producelist", { products: products });
 	} catch (error) {
 		res.status(400).send("Unable to get Produce list");
+	}
+});
+
+//Produce update get and post route
+router.get('/produce/update/:id', async (req, res) => {
+	try {
+		const updateProduct = await ProduceUpload.findOne({_id:req.params.id})
+    res.render('produce-update', {product:updateProduct});
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to update product');
+	}
+});
+
+router.post('/produce/update', async (req, res) => {
+	try {
+		await ProduceUpload.findOneAndUpdate({_id:req.query.id}, req.body);
+    res.redirect('/producelist');
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to update product');
+	}
+});
+
+//Produce delete Route
+router.post('/produce/delete', async (req, res) => {
+	try {
+		await ProduceUpload.deleteOne({_id:req.body.id});
+    res.redirect('back');
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to delete product');
 	}
 });
 

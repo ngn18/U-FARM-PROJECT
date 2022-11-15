@@ -1,0 +1,93 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='./css/aofficer.css')
+  title Farmer One  Dashboard
+nav.navbar.bg-light.fixed-top
+  .container-fluid
+    a.navbar-brand(href='#') Farmer One DashBoard
+    a.navbar-brand(href='#')
+      img(src='./Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
+    button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      span.navbar-toggler-icon
+    #offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      .offcanvas-header(style='background-color: green;')
+        h3#offcanvasNavbarLabel.offcanvas-title
+          img(src='./Images/U+FARM+Logo.png' width='200px')
+        button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+          li.nav-item
+            a.nav-link(aria-current='page' href='foregister') FARMER ONE REGISTRATION
+          li.nav-item
+            a.nav-link(href='FarmerOneList') FARMER ONE LIST
+          li.nav-item
+            form(method='post' action='/logout')
+              button.btn.btn-primary(type='submit') Log out
+div(style='margin-left: 90px; margin-top: 50px;')
+  .vert
+    .stats.card(style='padding-left: 50px;')
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Products Uploaded
+      h3(style='font-size: 50px;') 1,011
+      p.text-danger.d-flex(style='font-size: 27px;')
+        i.mdi.mdi-menu-down
+        span -0.5%
+    .stats(style='margin-left: 150px; padding-left: 50px;')
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Sales made
+      h3(style='font-size: 50px;') 2,100,000
+      p.text-danger.d-flex(style='font-size: 27px;')
+        i.mdi.mdi-menu-down
+        span -0.5%
+    .stats(style='margin-left: 150px; padding-left: 50px;')
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Deliveries made
+      h3(style='font-size: 50px;') 2,100,000
+      p.text-danger.d-flex(style='font-size: 27px;')
+        i.mdi.mdi-menu-down
+        span -0.5%
+.card.maincard
+  div(style='display: flex;')
+    .card.section1
+      .card-header
+        strong.heading Added Farmer Ones
+      ul.list-group.list-group-flush
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+        li.list-group-item A third item
+        li.list-group-item A third item
+        li.list-group-item A third item
+    .card.section1
+      .card-header
+        strong.heading Recently added Farmer Ones
+      ul.list-group.list-group-flush
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+  div(style='display: flex;')
+    .card.section1
+      .card-header
+        strong.heading Pending Farmer One Approvals
+      ul.list-group.list-group-flush
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+    .card.section1
+      .card-header
+        strong.heading Pending Produce Orders
+      ul.list-group.list-group-flush
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+        li.list-group-item An item
+        li.list-group-item A second item
+        li.list-group-item A third item
+script(src='./js/bootstrapjs/bootstrap.bundle.js')

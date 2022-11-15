@@ -28,6 +28,7 @@ const productRoute = require('./routes/productsRoutes');
 const vegproductRoute = require('./routes/productsRoutes');
 const animalproductRoute = require('./routes/productsRoutes');
 const produceuploadRoute = require('./routes/produploadRoutes');
+const dashboardRoute = require('./routes/dashboardRoutes');
 // const { fstat } = require('fs');
 
 //Instantiations
@@ -82,6 +83,7 @@ app.use('/', productRoute);
 app.use('/', vegproductRoute);
 app.use('/', animalproductRoute);
 app.use('/', produceuploadRoute);
+app.use('/', dashboardRoute);
 
 
 
@@ -104,43 +106,6 @@ app.use('/', produceuploadRoute);
 //     }
 //   });
 // });
-
-// Rendering pug file
-app.get('/aoregister', (req, res) => {
-  res.render('aoregister');
-});
-  
-app.post("/aoregister", (req, res) => {
-  console.log(req.body);
- res.redirect("login");
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-  
-app.post("/login", (req, res) => {
-  console.log(req.body);
- res.redirect("login");
-});
-
-app.get('/foregister', (req, res) => {
-  res.render('foregister');
-});
-  
-app.post("/foregister", (req, res) => {
-  console.log(req.body);
- res.redirect("login");
-});
-
-app.get('/ufregister', (req, res) => {
-  res.render('ufregister');
-});
-  
-app.post("/ufregister", (req, res) => {
-  console.log(req.body);
- res.redirect("login");
-});
 
   // Should be the last route before the bootstrapping server
   app.get('*', (req, res) => {

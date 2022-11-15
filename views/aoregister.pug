@@ -73,7 +73,11 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
                 input#telephone.form-control(type='text' name='telephone')
             .mb-3.col-sm-6
                 label.form-label(for='activity') Activity
-                input#activity.form-control(type='text' name='activity')
+                select#residence.drop(name='activity')
+                  option(value='') Select Activity  
+                  option(value='horticultureProduce') Horticulture Produce 
+                  option(value='poultry') Poultry 
+                  option(value='dairyProducts') Dairy Products
             .mb-3.col-sm-6
                 label.form-label(for='regdate') Date of Registration
                 input#regdate.form-control(type='date' name='regdate')
@@ -92,7 +96,5 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               input#exampleCheck1.form-check-input(type='checkbox')
               label.form-check-label(for='exampleCheck1') Check me out
             button.btn.btn-primary(type='submit') Submit
-      form(method='post' action='/logout')
-        button.btn.btn-primary(type='submit') Log out 
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
 script(src='./js/validation.js')

@@ -1,14 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const Registering = require('../models/User');
 // const Image = require('../models/Farmerupload');
 
 // Writing a route
-router.get('/ufregister',(req, res) => {
+router.get('/ufregister', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+    req.session.user = req.user;
+    if(req.user.role == 'farmerOne') {
     res.render('ufregister');
+    } else {
+        res.send('Form access restricted');
+    }
 });
 
 // Post route
