@@ -8,7 +8,7 @@ head
   title Agricultural Officer Dashboard
 nav.navbar.bg-light.fixed-top
   .container-fluid
-    a.navbar-brand(href='#') Urban Farmer DashBoard
+    a.navbar-brand(href='#') Farmer One DashBoard
     a.navbar-brand(href='#')
       img(src='/Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
     button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
@@ -21,15 +21,15 @@ nav.navbar.bg-light.fixed-top
       .offcanvas-body
         ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
           li.nav-item
-            a.nav-link(aria-current='page' href='ufdashboard') HOME 
+            a.nav-link(aria-current='page' href='fodashboard') HOME 
           li.nav-item
-            a.nav-link(aria-current='page' href='produceupload') UPLOAD YOUR PRODUCTS
+            a.nav-link(aria-current='page' href='ufregister') URBAN FARMER REGISTRATION
           li.nav-item
-            a.nav-link(href='#') PRODUCT LIST
+            a.nav-link(href='uflist') URBAN FARMER LIST
           li.nav-item
-            a.nav-link(href='#') UPDATE/ DELETE PRODUCTS
+            a.nav-link(href='#') PRODUCE LIST
           li.nav-item
-            form(method='post' action='/logout')
+            form(method='POST' action='/logout' enctype="multipart/form-data")
               button.btn.btn-primary(type='submit') Log out
 h4.card-title(style='margin-top: 100px;') List of Products
     br
@@ -50,11 +50,11 @@ h4.card-title(style='margin-top: 100px;') List of Products
                 th Status
                 th Availability
                 th Image 
-                th Update
-                th Delete
+                th Approve
         tbody
             if products.length
                 each product in products
+                  if product.status == 'Pending'
                     tr
                         td #{product.productcategory}
                         td #{product.producename}
@@ -69,13 +69,9 @@ h4.card-title(style='margin-top: 100px;') List of Products
                             img(src="/"+product.image, alt="Image" width='150px' height="150px")
                         //- td #{moment(us
                         td
-                            a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
-                        td
-                            form(method="post" action='/produce/delete')
-                                input(type="hidden" placeholder="" name="id", value=product._id)
-                                button.btn.btn-danger.btn-block(type="submit") Delete
+                            a.btn.btn-primary.btn-block(href='/produce/approve/'+product._id) Approve
     div.form-row
         div.col.form-group
-            a(class='button' href='/agricOfficerDash') Back
+            a(class='button' href='/fodashboard') Back
 script(src='/js/bootstrapjs/bootstrap.bundle.js')
 

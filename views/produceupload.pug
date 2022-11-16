@@ -9,30 +9,24 @@ head
 body(style='background-image: url(./images/UFARM_login_page.png); background-size: cover;')
   nav.navbar.navbar-expand-lg
     .container-fluid(style='margin-left: 70px; margin-top: 0px; font-size: 25px;')
-      a.navbar-brand(href='/index')
+      a.navbar-brand(href='ufdashboard')
         img(src='./Images/U+FARM+Logo.png' width='160px')
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item
-            a.nav-link(aria-current='page' href='/index') Home
-          li.nav-item
-            a.nav-link(href='/products') Products
-          li.nav-item
-            a.nav-link(href='#') Services
-          li.nav-item
-            a.nav-link(href='#') Blog
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Account
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='/login') Login
-              li
-                a.dropdown-item(href='/reglanding') Sign up
-          li.nav-item
-            a.nav-link(href='#') About
+            a.nav-link(aria-current='page' href='ufdashboard') Home
+          //- li.nav-item
+          //-   a.nav-link(href='/products') Products
+          //- li.nav-item.dropdown
+          //-   a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          //-     | Account
+          //-   ul.dropdown-menu
+          //-     li
+          //-       a.dropdown-item(href='/login') Login
+          //-     li
+          //-       a.dropdown-item(href='/reglanding') Sign up
   .col-6(style='margin-left: 100px; margin-top: 10px;')
     .register
       .card-header(style='font-size: 25px; text-align: center;')
@@ -43,9 +37,9 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       .card-body(style='margin-top: 25px; font-size: 20px;')
         form#register.form(method='post' name='produceupload' action='/produceupload' enctype="multipart/form-data")
           .row
-            .mb-3.col-sm-6
-              label.form-label(for='uniquenumber') Unique Number   
-              input#uniquenumber.form-control(type='text' name='uniquenumber')
+            //- .mb-3.col-sm-6
+            //-   label.form-label(for='uniquenumber') Unique Number   
+            //-   input#uniquenumber.form-control(type='text' name='uniquenumber')
             .mb-3.col-sm-6
               label.form-label(for='firstname') First Name  
               input#uniquenumber.form-control(type='text' name='firstname')
@@ -61,13 +55,16 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
               label.form-label(for='productcategory') Product Category
               input#uniquenumber.form-control(type='text' name='productcategory')
             .mb-3.col-sm-6
+              label.form-label(for='producttype') Product Type
+              input#uniquenumber.form-control(type='text' name='producttype')
+            .mb-3.col-sm-6
               label.form-label(for='producename') Produce Name
               input#ward.form-control(type='text' name='producename')
             .mb-3.col-sm-6
               label.form-label(for='quantity') Quantity
               input#firstname.form-control(type='number' name='quantity')
             .mb-3.col-sm-6
-              label.form-label(for='price') Price
+              label.form-label(for='price') Price(Ugx)
               input#lastname.form-control(type='number' name='price')
             .mb-3.col-sm-6
               label.form-label(for='modeofdelivery') Mode of Delivery
@@ -78,6 +75,9 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
             .mb-3.col-sm-6
               label.form-label(for='dateofupload') Date of Upload
               input#telephone.form-control(type='date' name='dateofupload')
+            .mb-3.col-sm-6
+              label.form-label(for='directions') Directions  
+              input#uniquenumber.form-control(type='text' name='directions')
             .mb-3.col-sm-6
               label.form-label(for='image') Upload Image
               input#activity.form-control(type='file' name='image')

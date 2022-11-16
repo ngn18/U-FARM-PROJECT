@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const Registering = require('../models/User');
@@ -22,8 +23,13 @@ var upload = multer({ storage: storage })
 
 
 // Writing a route(A.O Routes)
-router.get('/aoregister',(req, res) => {
+router.get('/aoregister', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+    req.session.user = req.user;
+    if(req.user.role == 'agriculturalOfficer') {
     res.render('aoregister');
+    } else {
+        res.send('Form access is restricted');
+    }
 });
 
 // Post route
@@ -48,17 +54,6 @@ router.post('/aoregister', async (req, res) => {
     } catch (error){
         res.status(400).send('Sorry system update');
         console.log(error)
-    }
-});
-
-// Code to help me change the name being displayed in the pug file(front end) which the user will see from 'items' in the backend to 'farmerones' in the front end. Getting list of all farmerones in the database system.
-router.get('/FarmerOneList', async (req,res) => {
-    try{
-        let items = await Registering.find({role:'farmerOne'});
-        res.render('FOlist', {farmerones:items});
-    } catch (error) {
-        res.status(400).send('Unable to find farmer ones in the database');
-        console.log(error);
     }
 });
 

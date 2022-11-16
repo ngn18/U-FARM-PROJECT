@@ -1,75 +1,72 @@
 doctype html
 head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
-    link(rel='stylesheet' href='css/style.css')
-    title Registration
-nav.navbar.navbar-expand-lg.bg-light.pb-4
-    .container-fluid
-        a.navbar-brand(href='#' style='font-weight: bolder; font-size: 25px;') Ufarm
-        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                li.nav-item
-                    a.nav-link.active(aria-current='page' href='#') Home
-                li.nav-item
-                    a.nav-link(href='#') Link
-                li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-                        | Dropdown
-                    ul.dropdown-menu
-                        li
-                            a.dropdown-item(href='#') Action
-                        li
-                            a.dropdown-item(href='#') Another action
-                        li
-                            hr.dropdown-divider
-                        li
-                            a.dropdown-item(href='#') Something else here
-                li.nav-item
-                    a.nav-link.disabled Disabled
-            form.d-flex.mt-2(role='search')
-                a.btn.btn-style(href='index') Back
-.container-fluid.form-style
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='/css/aofficer.css')
+  title Agricultural Officer Dashboard
+nav.navbar.bg-light.fixed-top
+  .container-fluid
+    a.navbar-brand(href='#') Agricultural Officer Dash Board
+    a.navbar-brand(href='#')
+      img(src='/Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
+    button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      span.navbar-toggler-icon
+    #offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      .offcanvas-header(style='background-color: green;')
+        h3#offcanvasNavbarLabel.offcanvas-title
+          img(src='/Images/U+FARM+Logo.png' width='200px')
+        button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+          li.nav-item
+            a.nav-link(aria-current='page' href='foregister') FARMER ONE REGISTRATION
+          li.nav-item
+            a.nav-link(href='FarmerOneList') VIEW FARMER ONE LIST
+          li.nav-item
+            a.nav-link(href='FarmerOneList') UPDATE FARMER ONE DETAILS
+          li.nav-item
+            form(method='post' action='/logout')
+              button.btn.btn-primary(type='submit') Log out
+.container-fluid.form-style(style='margin-top: 100px;')
     form#signup.form(action='/produce/update?id='+product._id name='produceupdate' method='POST')
         h3 Update Produce 
         hr
         .row
             .col
-                .form-field
-                    label(for='productname') Product Name:
-                    select(name='productname')
-                        option(value="Cassava" selected = product.productname === "Cassava") Cassava
-                        option(value="Broccoli" selected = product.productname === 'Brocoli') Brocoli
-                        option(value="Carrots" selected = product.productname === 'Carrots') Carrots
+                .form-field(style='margin-top: 10px; width: 24%; border: green;')
+                    label.form-label(for='producename') Product Name:
+                    input#producename.form-control(type='producename' name='producename')
+                    //- select(name='productname')
+                    //-     option(value="Cassava" selected = product.productname === "Cassava") Cassava
+                    //-     option(value="Broccoli" selected = product.productname === 'Brocoli') Brocoli
+                    //-     option(value="Carrots" selected = product.productname === 'Carrots') Carrots
         .row
             .col
-                .form-field
+                .form-field(style='margin-top: 10px;')
                     label(for='')
                         | Price:
-                        small  *
-                    input#price(type='number' name='price' autocomplete='off' value=product.price)
+                        small  
+                    input#price.form-control(type='number' name='price' autocomplete='off' value=product.price)
             .col
-                .form-field
+                .form-field(style='margin-top: 10px;')
                     label(for='')
                         | Quantity:
                         small  *
-                    input#ward(type='number' name='quantity' autocomplete='off' value=product.quantity)
+                    input#ward.form-control(type='number' name='quantity' autocomplete='off' value=product.quantity)
             .col
-                .form-field
+                .form-field(style='margin-top: 10px;')
                     label(for='') Mode of Delivery:
-                    select(name='modeofdelivery')
-                        option(value="pickup") Pick Up
-                        option(value="homedelivery") Home Delivery
+                    select.form-control(name='modeofdelivery')
+                        option(value="pickup" selected = product.modeofdelivery === 'pickup') Pick Up
+                        option(value="homedelivery" selected = product.modeofdelivery === 'homedelivery') Home Delivery
             .col
-                .form-field
+                .form-field(style='margin-top: 10px;')
                     label Mode of Payment:
-                    select(name='modeofpayment')
-                        option(value="cash" selected = product.producename === 'cash') Cash
-                        option(value="mobilemoney" selected = product.producename === 'mobilemoney') Mobile Money   
-            .form-field
-                input.btn.register-btn(type='submit' value='Register')
-script(src='bootstrap-js/js/bootstrap.bundle.js')
+                    select.form-control(name='modeofpayment')
+                        option(value="cash" selected = product.modeofpayment === 'cash') Cash
+                        option(value="mobilemoney" selected = product.modeofpayment === 'mobilemoney') Mobile Money   
+            .form-field(style='margin-top: 15px;')
+                button.btn.btn-primary.register-btn(type='submit' value='Register' style='border-radius: 30px; width: 200px; background-color: green;') Update 
+script(src='/js/bootstrapjs/bootstrap.bundle.js')

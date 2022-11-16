@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='/css/aofficer.css')
+  title Agricultural Officer Dashboard
+nav.navbar.bg-light.fixed-top
+  .container-fluid
+    a.navbar-brand(href='#') Agricultural Officer Dash Board
+    a.navbar-brand(href='#')
+      img(src='/Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
+    button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      span.navbar-toggler-icon
+    #offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      .offcanvas-header(style='background-color: green;')
+        h3#offcanvasNavbarLabel.offcanvas-title
+          img(src='/Images/U+FARM+Logo.png' width='200px')
+        button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+          li.nav-item
+            a.nav-link(aria-current='page' href='foregister') FARMER ONE REGISTRATION
+          li.nav-item
+            a.nav-link(href='FarmerOneList') VIEW FARMER ONE LIST
+          li.nav-item
+            a.nav-link(href='FarmerOneList') UPDATE FARMER ONE DETAILS
+          li.nav-item
+            form(method='post' action='/logout')
+              button.btn.btn-primary(type='submit') Log out
+.container-fluid.form-style(style='margin-top: 100px;')
+    form#signup.form(action='/farmerone/update?id='+farmerone._id name='farmeroneupdate' method='POST')
+        h3 Update farmerone
+        hr
+        .row
+            .col
+                .form-field(style='width: 400px;')
+                    label.form-label(for='activity') Activity
+                    select#residence.form-control.drop(name='activity')
+                        option(value='') Select Activity  
+                        option(value='horticultureProduce') Horticulture Produce 
+                        option(value='poultry') Poultry 
+                        option(value='dairyProducts') Dairy Products
+        .row
+            .col
+                .form-field(style='width: 400px;')
+                    label.form-label(for='telephone') Phone Number
+                    input#telephone.form-control(type='text' name='telephone')
+            //- .col
+            //-     .form-field
+            //-         label(for='')
+            //-             | Quantity:
+            //-             small  *
+            //-         input#ward(type='number' name='quantity' autocomplete='off' value=product.quantity)
+            //- .col
+            //-     .form-field
+            //-         label(for='') Mode of Delivery:
+            //-         select(name='modeofdelivery')
+            //-             option(value="pickup") Pick Up
+            //-             option(value="homedelivery") Home Delivery
+            //- .col
+            //-     .form-field
+            //-         label Mode of Payment:
+            //-         select(name='modeofpayment')
+            //-             option(value="cash" selected = product.producename === 'cash') Cash
+            //-             option(value="mobilemoney" selected = product.producename === 'mobilemoney') Mobile Money   
+            .form-field(style='margin-top: 15px;')
+                button.btn.btn-primary.register-btn(type='submit' value='Register' style='border-radius: 30px; width: 200px; background-color: green;') Update
+script(src='/js/bootstrapjs/bootstrap.bundle.js')

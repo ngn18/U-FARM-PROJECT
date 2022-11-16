@@ -40,7 +40,7 @@ router.post('/produceupload', connectEnsureLogin.ensureLoggedIn(), upload.single
         produce.image = req.file.path;
         console.log('This is my produce', produce);
             await produce.save();
-               res.redirect('/index')
+               res.redirect('/ufdashboard')
         }      
         catch (error){
          res.status(400).send('Product not saved');
@@ -49,7 +49,7 @@ router.post('/produceupload', connectEnsureLogin.ensureLoggedIn(), upload.single
 });
 
 //Getting/Displaying produce list-------
-router.get("/producelist", async (req, res) => {
+router.get("/producelist", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
 	try {
 		// const sort = {_id:-1}
 		let products = await ProduceUpload.find().sort({$natural:-1});
@@ -85,6 +85,26 @@ router.post('/produce/delete', async (req, res) => {
     res.redirect('back');
 	} catch (error) {
 		res.status(400).send('Sorry we were unable to delete product');
+	}
+});
+
+//Produce approve get and post route
+router.get('/produce/approve/:id', async (req, res) => {
+	try {
+		const updateProduct = await ProduceUpload.findOne({_id:req.params.id})
+    res.render('approve', {product:updateProduct});
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to update product');
+	}
+});
+
+router.post('/produce/approve', async (req, res) => {
+	try {
+		const x = await ProduceUpload.findOneAndUpdate({_id:req.query.id}, req.body);
+    console.log(x)
+    res.redirect('/foproducelist');
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to update product');
 	}
 });
 
