@@ -31,16 +31,17 @@ body(style='background-image: url(/images/UFARM_login_page.png); background-size
               form(method='post' action='/logout')
                 button.btn.btn-primary(type='submit') Log out
   .container-fluid.form-style(style='margin-top: 100px;')
-      form#signup.form(action='/produce/approve?id='+product._id name='produceupdate' method='POST')
-          h3 Update Produce 
+      form#signup.form(action='/produce/available?id='+item._id name='produceupdate' method='POST')
+          h3 Update Product Availability 
           hr
           .row
               .col
                   .form-field(style='margin-top: 10px; width: 20%;')
-                      label(for='status') Status:
-                      select.form-control(name='status')
-                          option(value="Pending" selected = product.status === 'Pending') Pending
-                          option(value="Approved" selected = product.status === 'Approved') Approve   
+                      label(for='availability') Availability:
+                      select.form-control(name='availability')
+                          option(value="available" selected = item.availability === 'available') Available
+                          option(value="booked" selected = item.availability === 'booked') Booked
+                          option(value="N/A" selected = item.availability === 'N/A') N/A    
               .form-field(style='margin-top: 15px;')
                   button.btn.btn-primary.register-btn(type='submit' value='Register' style='border-radius: 30px; width: 200px; background-color: green;') Approve 
 script(src='/js/bootstrapjs/bootstrap.bundle.js')

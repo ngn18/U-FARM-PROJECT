@@ -5,7 +5,7 @@ const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const Registering = require('../models/User');
-// const Image = require('../models/Farmerupload');
+// const ProduceUpload = require('../models/Farmerupload');
 
 // image upload
 // diskStorage is a method that accesses your computer.

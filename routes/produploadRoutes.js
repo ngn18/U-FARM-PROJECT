@@ -93,20 +93,52 @@ router.get('/produce/approve/:id', async (req, res) => {
 	try {
 		const updateProduct = await ProduceUpload.findOne({_id:req.params.id})
     res.render('approve', {product:updateProduct});
+    console.log('Product approved', updateProduct);
 	} catch (error) {
-		res.status(400).send('Sorry we were unable to update product');
+		res.status(400).send('Sorry we were unable to approve product');
 	}
 });
 
 router.post('/produce/approve', async (req, res) => {
 	try {
-		const x = await ProduceUpload.findOneAndUpdate({_id:req.query.id}, req.body);
-    console.log(x)
+		await ProduceUpload.findOneAndUpdate({_id:req.query.id}, req.body);
     res.redirect('/foproducelist');
 	} catch (error) {
 		res.status(400).send('Sorry we were unable to update product');
 	}
 });
+
+//Produce availability get and post route
+router.get('/produce/available/:id', async (req, res) => {
+	try {
+		const sellProduct = await ProduceUpload.findOne({_id:req.params.id})
+    res.render('availability', {item:sellProduct});
+    console.log('Product approved', sellProduct);
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to approve product');
+	}
+});
+
+router.post('/produce/available', async (req, res) => {
+	try {
+		await ProduceUpload.findOneAndUpdate({_id:req.query.id}, req.body);
+    res.redirect('/approvedproducelist');
+	} catch (error) {
+		res.status(400).send('Sorry we were unable to update product');
+	}
+});
+
+// Get route to return approved produce list
+router.get("/approvedproducelist", async (req, res) => {
+	try {
+		// const sort = {_id:-1}
+		let products = await ProduceUpload.find().sort({$natural:-1});
+		res.render("approvedproducelist", { goods:products });
+	} catch (error) {
+		res.status(400).send("Unable to get Produce list");
+	}
+});
+
 
 // Always MUST always be the last line in every routes file.
 module.exports = router;

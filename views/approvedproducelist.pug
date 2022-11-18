@@ -48,28 +48,27 @@ h4.card-title(style='margin-top: 100px;') List of Products
                 th Mode of Payment
                 th Date of Upload
                 th Status
-                th Availability
+                th Change Availability
                 th Image 
-                th Approve
         tbody
-            if products.length
-                each product in products 
-                  if product.status == 'Pending'    
+            if goods.length
+                each item in goods 
+                  if item.status == 'Approved'    
                     tr
-                        td #{product.productcategory}
-                        td #{product.producename}
-                        td #{product.quantity}
-                        td #{product.price}
-                        td #{product.modeofdelivery}
-                        td #{product.modeofpayment}
-                        td #{product.dateofupload}
-                        td #{product.status}
-                        td #{product.availability}
+                        td #{item.productcategory}
+                        td #{item.producename}
+                        td #{item.quantity}
+                        td #{item.price}
+                        td #{item.modeofdelivery}
+                        td #{item.modeofpayment}
+                        td #{item.dateofupload}
+                        td #{item.status}
+                        td #{item.availability}
                         td 
-                            img(src="/"+product.image, alt="Image" width='150px' height="150px")
+                            img(src="/"+item.image, alt="Image" width='150px' height="150px")
                         //- td #{moment(us
                         td
-                            a.btn.btn-primary.btn-block(href='/produce/approve/'+product._id) Approve
+                            a.btn.btn-primary.btn-block(href='/produce/available/'+item._id) Availability
     div.form-row
         div.col.form-group
             a(class='button' href='/fodashboard') Back

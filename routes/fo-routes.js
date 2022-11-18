@@ -77,7 +77,7 @@ router.get("/foproducelist", connectEnsureLogin.ensureLoggedIn(), async (req, re
 	try {
 		// const sort = {_id:-1}
 		let products = await ProduceUpload.find().sort({$natural:-1});
-		res.render("foproducelist", { products: products });
+		res.render("foproducelist", { products:products });
 	} catch (error) {
 		res.status(400).send("Unable to get Produce list");
 	}
