@@ -23,7 +23,7 @@ body {
     width: 1600px;
     height: 800px;
     border-radius: 50px;
-    box-shadow: 0px 0px 4px 4px rgb(174, 173, 173);
+    box-shadow: 0px 0px 30px 30px rgb(124, 169, 124);
 }
 
 .stats {
@@ -57,4 +57,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
     font-size: 22px;
+}
+
+.sidebtn {
+    background-color: #ffffff;
+    color:  rgb(5, 106, 5);
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0px 0px 4px 4px rgb(7, 155, 7);
+}
+
+.sidebtn:hover {
+    background-color: #ffffff;
+    color:  rgb(5, 106, 5);
+    box-shadow: 0px 0px 4px 4px rgb(99, 214, 99);
 }

@@ -5,7 +5,7 @@ const connectEnsureLogin = require('connect-ensure-login');
 
 // Importing model
 const Registering = require('../models/User');
-// const ProduceUpload = require('../models/Farmerupload');
+const ProduceUpload = require('../models/Farmerupload');
 
 // image upload
 // diskStorage is a method that accesses your computer.
@@ -56,6 +56,51 @@ router.post('/aoregister', async (req, res) => {
         console.log(error)
     }
 });
+
+// Reports routes for the aodashboard
+router.get('/aodashboard', connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
+    req.session.user = req.user;
+    if(req.user.role == 'agriculturalOfficer') {
+        try {
+            let totalPoultry = await ProduceUpload.aggregate([
+                { $match: { productcategory: 'poultry' } },
+                { $group: { _id: '$all',
+                totalQuantity: { $sum: '$quantity' },
+                totalCost: { $sum: { $multiply: [ '$price', '$quantity' ] } },
+                }}
+                ])
+
+            let totalHort = await ProduceUpload.aggregate([
+                { $match: { productcategory: 'horticultureProduce' } },
+                { $group: { _id: '$all',
+                totalQuantity: { $sum: '$quantity' },
+                totalCost: { $sum: { $multiply: [ '$price', '$quantity' ] } },
+                }}
+                ])
+
+            let totalDairy = await ProduceUpload.aggregate([
+                { $match: { productcategory: 'dairyProducts' } },
+                { $group: { _id: '$all',
+                totalQuantity: { $sum: '$quantity' },
+                totalCost: { $sum: { $multiply: [ '$price', '$quantity' ] } },
+                }}
+            ])
+
+            console.log('Poultry collections', totalPoultry)
+            console.log('Hort collections', totalHort)
+            console.log('Dairy collections', totalDairy)
+
+            res.render('aodashboard', {
+                title: 'Reports',
+                totalP: totalPoultry[0],
+                totalH: totalHort[0],
+                totalD: totalDairy[0],
+            });     
+        } catch (error) {
+            res.status(400).send('unable to find items in the database');
+        }
+    }
+}) 
 
 // Always MUST always be the last line in every routes file.
 module.exports = router;

@@ -129,11 +129,11 @@ router.post('/produce/available', async (req, res) => {
 });
 
 // Get route to return approved produce list
-router.get("/approvedproducelist", async (req, res) => {
+router.get("/fodashboard", async (req, res) => {
 	try {
 		// const sort = {_id:-1}
 		let products = await ProduceUpload.find().sort({$natural:-1});
-		res.render("approvedproducelist", { goods:products });
+		res.render("fodashboard", { goods:products });
 	} catch (error) {
 		res.status(400).send("Unable to get Produce list");
 	}
