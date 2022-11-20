@@ -17,14 +17,20 @@ router.get('/aodashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 }
 });
 
-router.get('/fodashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-    req.session.user = req.user;
-    if(req.user.role == 'farmerOne') {
-    res.render('fodashboard');
-    } else {
-        res.send('Page access is only granted to farmer ones');
-    }
+router.get('/fodashboard', connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
+    try {
+        req.session.user = req.user;
+        if(req.user.role === 'farmerOne') {
+            let products = await ProduceUpload.find().sort({$natural:-1});
+            res.render("fodashboard", { goods:products });
+        } else {
+            res.send('Page access is only granted to farmer ones');
+        }
+    } catch (error) {
+		res.status(400).send("Unable to get Produce list");
+	}
 });
+
 
 router.get('/ufdashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     req.session.user = req.user;
@@ -34,22 +40,6 @@ router.get('/ufdashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
         res.send('Page access is only granted to Urban Farmers')
     }
 });
-
-// Post route
-// router.post("/aodashboard", (req, res) => {
-//     console.log(req.body);
-//    res.redirect("aodashboard");
-//   });
-
-// router.post("/fodashboard", (req, res) => {
-//     console.log(req.body);
-//    res.redirect("fodashboard");
-//   });
-
-// router.post("/ufdashboard", (req, res) => {
-//     console.log(req.body);
-//    res.redirect("ufdashboard");
-//   });
   
 
 // Always MUST always be the last line in every routes file.

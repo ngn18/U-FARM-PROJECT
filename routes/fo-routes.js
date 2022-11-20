@@ -33,7 +33,7 @@ router.post('/foregister', async (req, res) => {
                 if (error) {
                     throw error
                 } 
-                res.redirect('/login');
+                res.redirect('/aodashboard');
             });
         }      
     } catch (error){

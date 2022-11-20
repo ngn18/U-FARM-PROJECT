@@ -1,0 +1,81 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/bootstrapcss/bootstrap.css')
+  link(rel='stylesheet' href='/css/aofficer.css')
+  title Farmer One Dashboard
+nav.navbar.bg-light.fixed-top
+  .container-fluid
+    a.navbar-brand(href='#') Farmer One DashBoard
+    a.navbar-brand(href='#')
+      img(src='/Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
+    button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      span.navbar-toggler-icon
+    #offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      .offcanvas-header(style='background-color: green;')
+        h3#offcanvasNavbarLabel.offcanvas-title
+          img(src='/Images/U+FARM+Logo.png' width='200px')
+        button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3.sidebar
+          li.nav-item
+            a.nav-link(aria-current='page' href='fodashboard') HOME 
+          li.nav-item
+            a.nav-link(aria-current='page' href='ufregister') URBAN FARMER REGISTRATION
+          li.nav-item
+            a.nav-link(href='uflist') UPDATE URBAN FARMER DETAILS
+          li.nav-item
+            a.nav-link(href='foproducelist') PRODUCTS LIST 
+          li.nav-item
+            form(method='post' action='/logout')
+              button.btn.btn-primary.sidebtn(type='submit') Log out
+h4.card-title(style='margin-top: 100px;') List of Urban Farmers
+    br
+    nav
+    #nav-tab.nav.nav-tabs(role='tablist')
+    #nav-tabContent.tab-content
+    br
+    table.table.table-bordered 
+        thead
+            tr
+                th Unique Number 
+                th Ward
+                th First Name
+                th Last Name
+                th Date of Birth
+                th Gender 
+                th NIN
+                th Phone Number 
+                th Activity 
+                th Date of Registration 
+                th Role 
+                th Update
+                //- th Delete
+        tbody
+            if urbanfarmers.length
+                each urbanfarmer in urbanfarmers
+                    tr
+                        td #{urbanfarmer.uniquenumber}
+                        td #{urbanfarmer.ward}
+                        td #{urbanfarmer.firstname}
+                        td #{urbanfarmer.lastname}
+                        td #{urbanfarmer.dateofbirth}
+                        td #{urbanfarmer.gender}
+                        td #{urbanfarmer.nin}
+                        td #{urbanfarmer.telephone}
+                        td #{urbanfarmer.activity}
+                        td #{urbanfarmer.regdate}
+                        td #{urbanfarmer.role}
+                        //- td #{moment(us
+                        td
+                            a.btn.btn-primary.btn-block(href='/urbanfarmer/update/'+urbanfarmer._id) Update
+                        //- td
+                            //- form(method="post" action='/farmerOne/delete')
+                            //-     input(type="hidden", placeholder="", name="id", value=farmerone._id)
+                            //-     button.btn.btn-danger.btn-block(type="submit") Delete
+    div.form-row
+        div.col.form-group
+script(src='/js/bootstrapjs/bootstrap.bundle.js')
+    

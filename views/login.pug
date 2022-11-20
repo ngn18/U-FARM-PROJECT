@@ -35,22 +35,21 @@ body(style='background-image: url(./images/UFARM_login_page.png); background-siz
       br
       p(style='font-size: 20px;') Login to access your account
       .card-body(style='margin-top: 25px; font-size: 20px;')
-        form#login.form(method='post' name='signin' action='/login')
+        form#login.form(method='post' name='signin' action='/login' onsubmit = "return Validate();")
           .mb-3
             label.form-label(for='uniquenumber') Unique Number
-            input#unique.form-control(type='text' name='uniquenumber' placeholder='Enter your Unique Number ')
+            input#unique.form-control(type='text' name='uniquenumber' placeholder='Enter your Unique Number')
+            small#uniquenumberError
           .mb-3
-            label.form-label(for='exampleInputPassword1') Password
+            label.form-label(for='password') Password
             input#exampleInputPassword1.form-control(type='password' name='password')
+            small#passwordError
           .mb-3.form-check
             input#exampleCheck1.form-check-input(type='checkbox')
-            label.form-check-label(for='exampleCheck1') Check me out
+            label.form-check-label(for='exampleCheck1') Remember password
           button.btn.btn-primary(type='submit' name='login') Log In
         br
         p
-          | Don&apos;t have an account with us? 
-          br
-          a(href='/reglanding' style='text-decoration: none;') Register now
-footer.footer
+          | Welcome back 
 script(src='./js/bootstrapjs/bootstrap.bundle.js')
-//- script(src='./js/validation.js')
+script(src='./js/loginvalidations.js')

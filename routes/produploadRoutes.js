@@ -129,15 +129,17 @@ router.post('/produce/available', async (req, res) => {
 });
 
 // Get route to return approved produce list
-router.get("/fodashboard", async (req, res) => {
-	try {
-		// const sort = {_id:-1}
-		let products = await ProduceUpload.find().sort({$natural:-1});
-		res.render("fodashboard", { goods:products });
-	} catch (error) {
-		res.status(400).send("Unable to get Produce list");
-	}
-});
+
+
+// router.get("/products", async (req, res) => {
+// 	try {
+// 		// const sort = {_id:-1}
+// 		let products = await ProduceUpload.find().sort({$natural:-1});
+// 		res.render("products", { goods:products });
+// 	} catch (error) {
+// 		res.status(400).send("Unable to get Produce list");
+// 	}
+// });
 
 
 // Always MUST always be the last line in every routes file.

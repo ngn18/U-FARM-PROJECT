@@ -32,66 +32,52 @@ nav.navbar.bg-light.fixed-top
 div(style='margin-left: 90px; margin-top: 50px;')
   .vert
     .stats.card(style='padding-left: 50px;')
-      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Products Uploaded
-      h3(style='font-size: 50px;') 1,011
-      p.text-danger.d-flex(style='font-size: 27px;')
-        i.mdi.mdi-menu-down
-        span -0.5%
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') POULTRY REPORT
+      h3(style='font-size: 20px;') Products Quantity: 
+      h3(style='font-size: 20px;') Revenue Projection: 
+      //- p.text-danger.d-flex(style='font-size: 27px;')
+      //-   i.mdi.mdi-menu-down
+      //-   span -0.5%
     .stats(style='margin-left: 150px; padding-left: 50px;')
-      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Sales made
-      h3(style='font-size: 50px;') 2,100,000
-      p.text-danger.d-flex(style='font-size: 27px;')
-        i.mdi.mdi-menu-down
-        span -0.5%
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') HORTICULTURE REPORT
+      h3(style='font-size: 20px;') Products Quantity: 
+      h3(style='font-size: 20px;') Revenue Projection: 
+      //- p.text-danger.d-flex(style='font-size: 27px;')
+      //-   i.mdi.mdi-menu-down
+      //-   span -0.5%
     .stats(style='margin-left: 150px; padding-left: 50px;')
-      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') Deliveries made
-      h3(style='font-size: 50px;') 2,100,000
-      p.text-danger.d-flex(style='font-size: 27px;')
-        i.mdi.mdi-menu-down
-        span -0.5%
+      p.statistics-title(style='font-size: 20px; margin-bottom: 5px;') DAIRY REPORT
+      h3(style='font-size: 20px;') Products Quantity: 
+      h3(style='font-size: 20px;') Revenue Projection: 
+      //- p.text-danger.d-flex(style='font-size: 27px;')
+      //-   i.mdi.mdi-menu-down
+      //-   span -0.5%
 .card.maincard
   div(style='display: flex;')
     .card.section1
       .card-header
-        strong.heading APPROVED PRODUCE
+        strong.heading APPROVED PRODUCTS
             if goods.length
                 each item in goods 
                   if item.status == 'Approved'    
                     ul(style='font-weight: lighter; font-size: 17px;')
-                        //- li.list-group-item #{item.productcategory}
                         li #{item.producename}
-                        //- li.list-group-item #{item.quantity}
-                        //- li.list-group-item #{item.price}
-                        //- li.list-group-item #{item.modeofdelivery}
-                        //- li.list-group-item #{item.modeofpayment}
-                        //- li.list-group-item #{item.dateofupload}
-                        //- li.list-group-item #{item.status}
-                        //- li.list-group-item 
-                        //-     img(src="/"+item.image, alt="Image" width='150px' height="150px")
-                        //- li #{moment(us
-                        //- li
-                        //-     a.btn.btn-primary.btn-block(href='/produce/available/'+item._id) Availability
     .card.section1
       .card-header
-        strong.heading Recently added Farmer Ones
-      ul.list-group.list-group-flush
-        li.list-group-item An item
-        li.list-group-item A second item
-        li.list-group-item A third item
-        li.list-group-item An item
-        li.list-group-item A second item
-        li.list-group-item A third item
+        strong.heading PENDING PRODUCTS
+            if goods.length
+                each item in goods 
+                  if item.status == 'Pending'    
+                    ul(style='font-weight: lighter; font-size: 17px;')
+                        li #{item.producename}
   div(style='display: flex;')
     .card.section1
       .card-header
-        strong.heading Pending Farmer One Approvals
-      ul.list-group.list-group-flush
-        li.list-group-item An item
-        li.list-group-item A second item
-        li.list-group-item A third item
-        li.list-group-item An item
-        li.list-group-item A second item
-        li.list-group-item A third item
+        strong.heading LIST OF URBAN FARMERS
+            //- if urbanfarmers.length
+            //-     each urbanfarmer in urbanfarmers    
+            //-         ul(style='font-weight: lighter; font-size: 17px;')
+            //-             li.list-group-item #{urbanfarmer.firstname}
     .card.section1
       .card-header
         strong.heading Pending Produce Orders

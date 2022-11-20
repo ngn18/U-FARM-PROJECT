@@ -4,39 +4,60 @@ const multer = require('multer');
 
 // Importing model
 const Registering = require('../models/User');
-// const Image = require('../models/Farmerupload');
+const ProduceUpload = require('../models/Farmerupload');
 
 // Writing a get route
-router.get('/products',(req, res) => {
-    res.render('products');
+router.get('/poultryproducts', async (req, res) => {
+    try {
+		// const sort = {_id:-1}
+		let products = await ProduceUpload.find().sort({$natural:-1});
+		res.render("poultryproducts", { goods:products });
+	} catch (error) {
+		res.status(400).send("Unable to get Produce list");
+	}
+    // res.render('products');
 });
 
 // Post route
-router.post("/products", (req, res) => {
+router.post("/poultryproducts", (req, res) => {
     console.log(req.body);
-   res.redirect("products");
+   res.redirect("poultryproducts");
   });
 
 // Writing a get route
-router.get('/vegproducts',(req, res) => {
-    res.render('vegproducts');
+router.get('/hortproducts', async (req, res) => {
+    try {
+		// const sort = {_id:-1}
+		let products = await ProduceUpload.find().sort({$natural:-1});
+		res.render("hortproducts", { goods:products });
+	} catch (error) {
+		res.status(400).send("Unable to get Produce list");
+	}
+    // res.render('hortproducts');
 });
 
 // Post route
-router.post("/vegproducts", (req, res) => {
+router.post("/hortproducts", (req, res) => {
     console.log(req.body);
-   res.redirect("vegproducts");
+   res.redirect("hortproducts");
   }); 
   
 // Writing a get route
-router.get('/animalproducts',(req, res) => {
-    res.render('animalproducts');
+router.get('/dairyproducts', async (req, res) => {
+    try {
+		// const sort = {_id:-1}
+		let products = await ProduceUpload.find().sort({$natural:-1});
+		res.render("dairyproducts", { goods:products });
+	} catch (error) {
+		res.status(400).send("Unable to get Produce list");
+	}
+    // res.render('dairyproducts');
 });
 
 // Post route
-router.post("/animalproducts", (req, res) => {
+router.post("/dairyproducts", (req, res) => {
     console.log(req.body);
-   res.redirect("animalproducts");
+   res.redirect("dairyproducts");
   });    
 
 // Always MUST always be the last line in every routes file.

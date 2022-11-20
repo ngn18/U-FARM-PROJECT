@@ -5,11 +5,11 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/css/bootstrapcss/bootstrap.css')
   link(rel='stylesheet' href='/css/aofficer.css')
-  title Agricultural Officer Dashboard
+  title Farmer One Dashboard
 body(style='background-image: url(/images/UFARM_login_page.png); background-size: cover;')
   nav.navbar.bg-light.fixed-top
     .container-fluid
-      a.navbar-brand(href='#') Agricultural Officer Dash Board
+      a.navbar-brand(href='#') Farmer One Dash Board
       a.navbar-brand(href='#')
         img(src='/Images/U+FARM+Logo.png' width='120px' style='margin-left: 1100px;')
       button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
@@ -31,7 +31,7 @@ body(style='background-image: url(/images/UFARM_login_page.png); background-size
               form(method='post' action='/logout')
                 button.btn.btn-primary.sidebtn(type='submit') Log out
   .container-fluid.form-style(style='margin-top: 100px;')
-      form#signup.form(action='/farmerone/update?id='+farmerone._id name='farmeroneupdate' method='POST')
+      form#signup.form(action='/urbanfarmer/update?id='+urbanfarmer._id name='urbanfarmerupdate' method='POST')
           h3 Update farmerone
           hr
           .row

@@ -449,5 +449,4 @@ const Validate = () => {
         passwordagain.style.border = '2px solid green';
         passwordagainError.textContent = '';
     }
-    
 };
